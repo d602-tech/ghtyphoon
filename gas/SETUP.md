@@ -80,7 +80,7 @@ const DRIVE_ROOT = "1QdrgPsjeOiR8bib9y3lp8Z6vIzObknmz";
 3. 建立 **OAuth 2.0 用戶端 ID**（類型：**網頁應用程式**）
 4. 授權的 JavaScript 來源：
    - `http://localhost:8080`（本機開發）
-   - `https://<your-github-username>.github.io`（生產環境）
+   - `https://d602-tech.github.io`（生產環境）
 5. 複製 **用戶端 ID**
 
 ---
