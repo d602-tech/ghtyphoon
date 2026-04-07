@@ -15,6 +15,18 @@
 
     <!-- Google Identity Services（Google OAuth 登入） -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <!-- GitHub Pages SPA: restore path encoded by 404.html -->
+    <script>
+      (function() {
+        var p = window.location.search.slice(1).split('&')
+          .filter(function(s) { return s.startsWith('p='); })[0];
+        if (p) {
+          var path = decodeURIComponent(p.slice(2));
+          window.history.replaceState(null, null, '/' + path);
+        }
+      })();
+    </script>
   </head>
 
   <body>
