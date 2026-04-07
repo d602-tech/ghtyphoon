@@ -1,7 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth, mockAccounts, roleLabels } from "@/lib/authStore";
+import { useAuth } from "@/lib/authStore";
+import { ROLE_LABELS } from "@/lib/gasTypes";
+import type { UserRole } from "@/lib/gasTypes";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+const mockAccounts: { id: string; email: string; name: string; role: UserRole }[] = [
+  { id: "1", email: "admin@demo.com",   name: "系統管理員",   role: "admin" },
+  { id: "2", email: "manager@demo.com", name: "部門管理員",   role: "dept_manager" },
+  { id: "3", email: "user@demo.com",    name: "一般使用者",   role: "general" },
+];
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -149,7 +157,7 @@ const Login = () => {
                     <p className="text-sm font-medium text-foreground truncate">{u.name}</p>
                     <p className="text-xs text-muted-foreground">{u.email}</p>
                   </div>
-                  <Badge variant="secondary" className="shrink-0 ml-2">{roleLabels[u.role]}</Badge>
+                  <Badge variant="secondary" className="shrink-0 ml-2">{ROLE_LABELS[u.role]}</Badge>
                 </button>
               ))}
             </div>
